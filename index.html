@@ -1,93 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Calorie Counter</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <main>
-      <h1>Calorie Counter</h1>
-      <div class="container">
-        <form id="calorie-counter">
-          
-          <div class="top-row">
-            <div class="budget-group">
-              <label for="budget">Budget</label>
-              <input
-                type="number"
-                min="0"
-                id="budget"
-                placeholder="Daily calorie budget"
-                required
-              />
-            </div>
-          
-            <div class="controls">
-              <span>
-                <label for="entry-dropdown">Add food or exercise:</label>
-                <select id="entry-dropdown" name="options">
-                  <option value="breakfast" selected>Breakfast</option>
-                  <option value="lunch">Lunch</option>
-                  <option value="dinner">Dinner</option>
-                  <option value="snacks">Snacks</option>
-                  <option value="exercise">Exercise</option>
-                </select>
-                <button type="button" id="add-entry">Add Entry</button>
-              </span>
-            </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Calorie Counter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+    <h1>Calorie Counter</h1>
+    <div class="container">
+      <form id="calorie-counter">
+
+        <div class="top-row">
+          <div class="budget-group">
+            <label for="budget">Budget</label>
+            <input type="number" min="0" id="budget" placeholder="Daily calorie budget" required />
           </div>
-          
-          <fieldset id="breakfast">
 
-            <legend>Breakfast</legend>
-
-            <div class="input-container"></div>
-          </fieldset>
-
-          <fieldset id="lunch">
-
-            <legend>Lunch</legend>
-
-            <div class="input-container"></div>
-          </fieldset>
-
-          <fieldset id="dinner">
-
-            <legend>Dinner</legend>
-
-            <div class="input-container"></div>
-
-          </fieldset>
-
-          <fieldset id="snacks">
-
-            <legend>Snacks</legend>
-
-            <div class="input-container"></div>
-
-          </fieldset>
-          
-          <fieldset id="exercise">
-
-            <legend>Exercise</legend>
-
-            <div class="input-container"></div>
-
-          </fieldset>
-         
-          <div>
-            <button type="submit">
-              Calculate Remaining Calories
-            </button>
-            <button type="button" id="clear">Clear</button>
+          <div class="controls">
+            <span>
+              <label for="entry-dropdown">Add food or exercise:</label>
+              <select id="entry-dropdown" name="options">
+                <option value="breakfast" selected>Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snacks">Snacks</option>
+                <option value="exercise">Exercise</option>
+              </select>
+              <button type="button" id="add-entry">Add Entry</button>
+            </span>
           </div>
-        </form>
-        <div id="output" class="output hide"></div>
+        </div>
+
+        <fieldset id="breakfast">
+
+          <legend>Breakfast</legend>
+
+          <div class="input-container"></div>
+        </fieldset>
+
+        <fieldset id="lunch">
+
+          <legend>Lunch</legend>
+
+          <div class="input-container"></div>
+        </fieldset>
+
+        <fieldset id="dinner">
+
+          <legend>Dinner</legend>
+
+          <div class="input-container"></div>
+
+        </fieldset>
+
+        <fieldset id="snacks">
+
+          <legend>Snacks</legend>
+
+          <div class="input-container"></div>
+
+        </fieldset>
+
+        <fieldset id="exercise">
+
+          <legend>Exercise</legend>
+
+          <div class="input-container"></div>
+
+        </fieldset>
+
+        <div>
+          <button type="submit">
+            Calculate Remaining Calories
+          </button>
+          <button type="button" id="clear">Clear</button>
+        </div>
+      </form>
+      <!-- <div id="output" class="output hide"></div> -->
+
+      <!-- Result output of calories  -->
+      <div id="calorie-result" class="calorie-result hidden">
+        <button id="calorie-close" class="close-btn" aria-label="Close">❌</button>
+        <h2>Calorie Summary</h2>
+        <div class="calorie-info">
+          <p><strong>Budgeted Calories:</strong> <span id="budgeted-calories"></span></p>
+          <p><strong>Consumed Calories:</strong> <span id="consumed-calories"></span></p>
+          <p><strong>Calories Burned:</strong> <span id="burned-calories"></span></p>
+        </div>
+        <hr>
+        <p class="surplus-deficit"><span id="calorie-status"></span></p>
       </div>
-    </main>
+
+<div class="overlay hidden"></div>
+      
+      <!-- Confirm Yes/No -->
+<div id="custom-confirm" class="confirm-box hidden">
+  <p id="confirm-message"></p>
+  <button id="confirm-yes">Yes</button>
+  <button id="confirm-no">No</button>
+</div>
+
+
+
+    </div>
+  </main>
+
   <script src="./script.js"></script>
-  </body>
+</body>
+
 </html>
