@@ -22,9 +22,13 @@
   
   .container {
     width: 90%;
-    max-width: 680px;
+    max-width: 780px;
   }
-  
+  .entry-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   h1,
   .container,
   .output {
@@ -37,7 +41,7 @@
     gap: 20px;
     flex-wrap: wrap;
   }
- 
+
 
   label,
   legend {
@@ -71,7 +75,7 @@
     margin-bottom: 10px;
   }
   
-  .output {
+  /* .output {
     border: 2px solid var(--light-grey);
     padding: 10px;
     text-align: center;
@@ -85,11 +89,109 @@
     font-weight: bold;
     font-size: 1.2em;
   }
+   */
+
+
+/* output  */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;  /* full viewport width */
+  height: 100vh; /* full viewport height */
+  background-color: rgba(0,0,0,0.4); /* semi-transparent black */
+  z-index: 900; /* less than modal */
+}
+
+
+.calorie-result {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: #fff;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-family: Arial, sans-serif;
+  z-index: 1000;
+  color: #222;
+}
+
+
+
+
+.close-btn {
+  float: right;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.2em;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.calorie-info p {
+  margin: 8px 0;
+  font-size: 1em;
+}
+
+.surplus-deficit {
+  font-weight: bold;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.surplus {
+  color: var(--light-pink);
+}
+
+.deficit {
+  color: var(--light-green);
+}
+
+
+
+
+
+
+
+
+
+
+
+
   
-  .surplus {
-    color: var(--light-pink);
-  }
+  .hidden {
+  display: none;
+}
+
+.confirm-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 2px solid black;
+  padding: 1rem;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  text-align: center;
+  border-radius: 8px;
+}
+
+.confirm-box button {
+  margin: 0.5rem;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+}
+#confirm-message{
+color:#000;
+}
+
   
-  .deficit {
-    color: var(--light-green);
-  }
+  
+  
