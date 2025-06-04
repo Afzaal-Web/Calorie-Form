@@ -141,6 +141,7 @@ function calculateCalories(e) {
   displayBurnedCalories.textContent = exerciseCalories;
   calorieStatus.classList.add(surplusOrDeficit.toLowerCase());
   calorieStatus.textContent = `${Math.abs(remainingCalories)} Calorie ${surplusOrDeficit}`;
+  confetti();
 }
 calorieCounter.addEventListener('submit', calculateCalories);
 
